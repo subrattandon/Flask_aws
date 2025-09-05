@@ -1,0 +1,37 @@
+name: CI/CD pipeline
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: build docker image
+        run: docker build -t subrattandon/flask-app:latest .
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Push docker image
+        run: docker push subrattandon/flask-app:latest
+
+      - name: Deploy to ec2
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            docker pull subrattandon/flask-app:latest
+            docker stop flask-app || true
+            docker rm flask-app || true
+            docker run -d -p 8081:5000 --name flask-app subrattandon/flask-app
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Flask + DevOps (2025 Edition)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(255,255,255,0.85);
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            backdrop-filter: blur(6px);
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        .tech-list li {
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+        }
+        .tech-list i {
+            color: #0d6efd;
+            margin-right: 0.5rem;
+        }
+        .timeline {
+            border-left: 3px solid #0d6efd;
+            margin-left: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .timeline-event {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            left: -2.1rem;
+            top: 0.2rem;
+            width: 1rem;
+            height: 1rem;
+            background: #0d6efd;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+        .btn-dark {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+        .btn-dark:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glass-card">
+            <div class="d-flex align-items-center mb-4">
+                <i class="bi bi-hospital fs-1 text-primary me-3"></i>
+                <h1 class="mb-0">About This Project <span class="badge bg-primary fs-6 ms-2">2025</span></h1>
+            </div>
+            <p class="lead">
+                Welcome to the <strong>next-gen Hospital App</strong>! This project leverages the latest in <strong>Flask</strong>, <strong>DevOps</strong>, and <strong>Cloud Native</strong> technologies for seamless, scalable deployments.
+            </p>
+            <ul class="tech-list list-unstyled mb-4">
+                <li><i class="bi bi-code-slash"></i> Python Flask 3.x & FastAPI microservices</li>
+                <li><i class="bi bi-box"></i> Docker & Podman containers</li>
+                <li><i class="bi bi-git"></i> GitHub Actions + Advanced CI/CD pipelines</li>
+                <li><i class="bi bi-cloud"></i> AWS EC2, Lambda, and S3 integration</li>
+                <li><i class="bi bi-shield-lock"></i> Zero Trust Security & OAuth2</li>
+                <li><i class="bi bi-graph-up-arrow"></i> Real-time Monitoring with Prometheus & Grafana</li>
+                <li><i class="bi bi-cpu"></i> AI-powered diagnostics (2025 ready!)</li>
+            </ul>
+            <h4 class="mt-4">Deployment Timeline</h4>
+            <div class="timeline mb-4">
+                <div class="timeline-event">
+                    <strong>2023:</strong> Initial Flask app & Docker setup
+                </div>
+                <div class="timeline-event">
+                    <strong>2024:</strong> CI/CD automation & AWS deployment
+                </div>
+                <div class="timeline-event">
+                    <strong>2025:</strong> AI integration, serverless upgrades, and advanced monitoring
+                </div>
+            </div>
+            <a href="/" class="btn btn-dark btn-lg"><i class="bi bi-arrow-left"></i> Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
