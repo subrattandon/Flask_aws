@@ -67,7 +67,7 @@ CMD ["python", "app.py"]
 
 ```bash
 docker build -t flask_demo .
-docker run -p 5000:5000 flask_demo
+docker run -p 8081:8081 flask_demo
 ```
 
 ## License
